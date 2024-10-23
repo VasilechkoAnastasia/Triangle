@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Triangle 
+        {
+            constructor(a = 0, b = 0, c = 0) 
+            {
+                this.a = a;
+                this.b = b;
+                this.c = c;
+            }
+
+            input() 
+            {
+                this.a = parseFloat(prompt("Side triangle 1: "));
+                this.b = parseFloat(prompt("Side triangle 2: "));
+                this.c = parseFloat(prompt("Side triangle 3:"));
+            }
+
+            getPerimeter() 
+            {
+                return this.a + this.b + this.c;
+            }
+
+            getArea() 
+            {
+                let p = this.getPerimeter() / 2; 
+                return Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
+            }
+            
+            output() 
+            {
+                return `Side triangle 1: ${this.a}\nSide triangle 2: ${this.b}\nSide triangle 3: ${this.c}`; 
+            }
+        }
+
+        let triangle = new Triangle(3, 4, 5);
+        console.log(triangle.output());
+        console.log(`Perimeter: ${triangle.getPerimeter()}`); 
+        console.log(`Area: ${triangle.getArea()}`); 
+
+        let triangle2 = new Triangle();
+        triangle2.input();
+        console.log(triangle2.output());
+        console.log(`Perimeter: ${triangle2.getPerimeter()}`); 
+        console.log(`Area: ${triangle2.getArea()}`); 
+    </script>
+</body>
+</html>
+
